@@ -6,8 +6,12 @@ public class numberNeighbor {
 
     public static int position = 0;
     public static String lastFour = "";
-    public static int four; 
+    public static int fourNumber = 0; 
+    
     public static void main (String[] args) {
+
+        ArrayList<String> numbers = new ArrayList<String>(); 
+
         Scanner numberInput = new Scanner(System.in);
         System.out.println("give me your phone number in this form. (xxx)xxx-xxxx");
         String input = numberInput.nextLine().strip();
@@ -27,12 +31,23 @@ public class numberNeighbor {
             lastFour += input.charAt(i);
             
         }
-        
-        for (int i = 1; i <= 10; i++) {
-            four = Integer.parseInt(lastFour); 
-            four += 1; 
+        int last = Integer.parseInt(lastFour.substring(lastFour.length()-1)); 
+        int forwardsNumber = Integer.parseInt(lastFour); 
+        int backwardsNumber = Integer.parseInt(lastFour); 
+        System.out.println(last);
+        int back = last; 
+        int forwards = 10 - last;
+
+        for (int i = 0; i < forwards; i++) {
+            forwardsNumber++; 
+            System.out.println(forwardsNumber); 
         }
-        System.out.println(four); 
+        for (int i = last; i > 0; i--){
+            backwardsNumber--; 
+            System.out.println(backwardsNumber);
+        }
+        
+        
 
 
     }
