@@ -11,6 +11,7 @@ public class numberNeighbor {
     public static void main (String[] args) {
 
         ArrayList<String> numbers = new ArrayList<String>(); 
+        String num; 
 
         Scanner numberInput = new Scanner(System.in);
         System.out.println("give me your phone number in this form. (xxx)xxx-xxxx");
@@ -34,17 +35,26 @@ public class numberNeighbor {
         int last = Integer.parseInt(lastFour.substring(lastFour.length()-1)); 
         int forwardsNumber = Integer.parseInt(lastFour); 
         int backwardsNumber = Integer.parseInt(lastFour); 
-        System.out.println(last);
+       
         int back = last; 
         int forwards = 10 - last;
 
         for (int i = 0; i < forwards; i++) {
             forwardsNumber++; 
-            System.out.println(forwardsNumber); 
+            if (forwardsNumber == 10000){
+                num = "0000"; 
+                numbers.add(num); 
+            }
+            else {
+                num = String.valueOf(forwardsNumber);
+                numbers.add(String.valueOf(num)); 
+            }
+            
         }
         for (int i = last; i > 0; i--){
             backwardsNumber--; 
-            System.out.println(backwardsNumber);
+            num = String.valueOf(forwardsNumber);
+            numbers.add(String.valueOf(num)); 
         }
         
         
