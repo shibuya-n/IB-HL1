@@ -56,7 +56,7 @@ public class numberNeighbor {
             else {
                 num = String.valueOf(forwardsNumber);
                 numbers.add(String.valueOf(num)); 
-                System.out.println(num); 
+                
             }
             
         }
@@ -75,15 +75,18 @@ public class numberNeighbor {
                 System.out.println(restNum + x);
             }
             else {
-                for(int j = 0; j <= 4 - x.length(); j++){
+                int runTime = 4 - x.length();
+                for(int j = 0; j < runTime; j++){
                      
                     x = "0" + x; 
-                    System.out.println(x);
+                    
                 }
-                System.out.println(x);
+                System.out.println(restNum + x);
             }
         }
-
+        
+        
 
     }
+    
 }
