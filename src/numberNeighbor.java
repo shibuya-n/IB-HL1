@@ -6,6 +6,7 @@ public class numberNeighbor {
 
     public static int position = 0;
     public static String lastFour = "";
+    public static int four; 
     public static void main (String[] args) {
         Scanner numberInput = new Scanner(System.in);
         System.out.println("give me your phone number in this form. (xxx)xxx-xxxx");
@@ -22,10 +23,16 @@ public class numberNeighbor {
                 break;
             }
         }
-        for (int j = position + 1; j < input.length()-1; j++){
-            lastFour += input.charAt(j);
+        for (int i = position + 1; i <= input.length()-1; i++){
+            lastFour += input.charAt(i);
+            
         }
-
+        
+        for (int i = 1; i <= 10; i++) {
+            four = Integer.parseInt(lastFour); 
+            four += 1; 
+        }
+        System.out.println(four); 
 
 
     }
